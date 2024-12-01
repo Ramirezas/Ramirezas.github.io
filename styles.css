@@ -1,0 +1,121 @@
+/* Default Typography Styles */
+h1, h2, h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+p {
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+/* Link Color and Hover Effects */
+a {
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* Button Styling */
+button {
+    background-color: var(--button-light);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, opacity 0.3s;
+}
+
+/* Hover Effect: Darker Blue */
+button:hover {
+    background-color: #2647ff; /* Darker blue shade */
+
+}
+
+/* Box Model for Sections */
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+}
+
+/* Flexbox Layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    border: 2px solid #007bff;
+    padding: 10px;
+    text-align: center;
+    background-color: #e9ecef;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Theme Color Variables */
+:root {
+    --background-light: #ffffff;
+    --background-dark: #121212;
+    --text-light: #000000;
+    --text-dark: #ffffff;
+    --button-light: #007bff; /* Light blue for buttons */
+    --button-dark: #4caf50;  /* Green for buttons in dark mode */
+}
+
+/* Default Light Mode */
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+/* Dark Mode Button Styling */
+body.dark-mode button {
+    background-color: var(--button-dark);
+}
+
+/* Dark Mode Button Hover Effect */
+body.dark-mode button:hover {
+    background-color: #388e3c; /* Darker green for hover in dark mode */
+}
+
+/* Smooth Transition for Theme Changes */
+body, button {
+    transition: background-color 0.3s, color 0.3s;
+}
