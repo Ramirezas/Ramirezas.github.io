@@ -88,8 +88,10 @@ section {
     --background-dark: #121212;
     --text-light: #000000;
     --text-dark: #ffffff;
-    --button-light: #007bff; /* Light blue for buttons */
-    --button-dark: #4caf50;  /* Green for buttons in dark mode */
+    --button-light: #007bff; 
+    --button-dark: #4caf50; 
+    --section-background-light: #f8f9fa;
+    --section-background-dark: #333333;
 }
 
 /* Default Light Mode */
@@ -102,6 +104,16 @@ body {
 /* Dark Mode */
 body.dark-mode {
     background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+body.dark-mode section {
+    background-color: var(--section-background-dark); /* Dark mode */
+    color: var(--text-dark);
+}
+
+body.dark-mode .container {
+    background-color: var(--section-background-dark); /* Dark mode */
     color: var(--text-dark);
 }
 
