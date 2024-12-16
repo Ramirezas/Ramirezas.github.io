@@ -1,133 +1,288 @@
-/* Default Typography Styles */
-h1, h2, h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #111;
+    color: #fff;
+    width: 250px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
 }
 
-p {
-    font-family: 'Georgia', serif;
+.sidebar .nav {
+    margin-top: 20px;
+    flex-grow: 1;
+}
+
+.sidebar #toggle-theme {
+    position: absolute;
+    bottom: 90px;
+    left: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+.sidebar .profile {
+    text-align: center;
+}
+
+.sidebar .profile-img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.sidebar h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.sidebar p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.sidebar .nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.sidebar .nav ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar .nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
     font-size: 1rem;
-    font-weight: normal;
+    transition: color 0.3s;
 }
 
-/* Link Color and Hover Effects */
-a {
-    color: #000000;
-    text-decoration: none;
+.sidebar .nav ul li a i {
+    margin-right: 10px;
 }
 
-a:hover {
-    color: #ffffff;
-    text-decoration: none;
+.sidebar .nav ul li a:hover {
+    color: #f39c12;
 }
 
-/* Button Styling */
-button {
-    background-color: var(--button-light);
+
+/* Main Content: Respect Sidebar */
+.main-content {
+    margin-left: 290px;
+    padding: 20px;
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+form#contactForm {
+    background-color: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+form#contactForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+form#contactForm input[type="text"],
+form#contactForm input[type="email"],
+form#contactForm input[type="tel"],
+form#contactForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form#contactForm input[type="number"] {
+    max-width: 80px;
+}
+
+form#contactForm input[type="text"]:focus,
+form#contactForm input[type="email"]:focus,
+form#contactForm input[type="tel"]:focus,
+form#contactForm input[type="number"]:focus {
+    outline: none;
+    border: 1px solid #4CAF50;
+}
+
+form#contactForm button {
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s, opacity 0.3s;
+    font-size: 1rem;
 }
 
-/* Hover Effect: Darker Blue */
-button:hover {
-    background-color: #2647ff; /* Darker blue shade */
-
+form#contactForm button:hover {
+    background-color: #45a049;
 }
 
-/* Box Model for Sections */
-section {
-    margin: 20px;
+#output {
+    background-color: var(--background-color);
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 600px;
+    line-height: 1.5;
 }
 
-/* Flexbox Layout */
-.container {
+#output p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin: 5px 0;
+}
+
+/* Content Section: General */
+.content-section {
+    margin-bottom: 40px;
+}
+
+.content-section video,
+.content-section iframe,
+.content-section audio,
+.content-section img {
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+}
+
+/* Global font styles */
+body {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Variables for light and dark themes */
+    :root {
+        --background-color: white;
+        --text-color: rgb(0, 0, 0);
+    }
+    
+    [data-theme="dark"] {
+        --background-color: black;
+        --text-color: rgb(255, 255, 255);
+    }
+
+/* Header styles */
+h2, h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Paragraph and list styles */
+p, ul, li {
+    font-family: 'Verdana', sans-serif;
+    font-size: 1.1em;
+}
+
+/* Button styles */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:focus {
+    outline: 2px solid orange;
+}
+
+/* Scroll-to-Top Button Styles */
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(5, 53, 7, 0.8);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-/* Grid Layout */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+#scroll-to-top:hover {
+    background-color: rgba(69, 160, 73, 0.9);
+    transform: scale(1.2);
 }
 
-.grid-item {
-    border: 2px solid #007bff;
-    padding: 10px;
+#scroll-to-top.show {
+    display: block;
+    opacity: 1;
+}
+
+#scroll-to-top.hidden {
+    opacity: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+#clock {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
     text-align: center;
-    background-color: #e9ecef;
 }
-
-/* Media Query for Small Screens */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
+.svg-background {
+    width: 100px;
+    height: 100px;
+    background-image: url('images/example.svg');
+    background-size: cover;
 }
-
-/* Theme Color Variables */
-:root {
-    --background-light: #ffffff;
-    --background-dark: #121212;
-    --text-light: #000000;
-    --text-dark: #ffffff;
-    --button-light: #007bff; 
-    --button-dark: #4caf50; 
-    --section-background-light: #f8f9fa;
-    --section-background-dark: #333333;
-}
-
-/* Default Light Mode */
-body {
-    background-color: var(--background-light);
-    color: var(--text-light);
-    transition: background-color 0.3s, color 0.3s, font-size 0.3s;
-}
-
-/* Dark Mode */
-body.dark-mode {
-    background-color: var(--background-dark);
-    color: var(--text-dark);
-}
-
-body.dark-mode section {
-    background-color: var(--section-background-dark); /* Dark mode */
-    color: var(--text-dark);
-}
-
-body.dark-mode .container {
-    background-color: var(--section-background-dark); /* Dark mode */
-    color: var(--text-dark);
-}
-
-/* Dark Mode Button Styling */
-body.dark-mode button {
-    background-color: var(--button-dark);
-}
-
-/* Dark Mode Button Hover Effect */
-body.dark-mode button:hover {
-    background-color: #388e3c; /* Darker green for hover in dark mode */
-}
-
-/* Smooth Transition for Theme Changes */
-body, button {
-    transition: background-color 0.3s, color 0.3s;
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
 }

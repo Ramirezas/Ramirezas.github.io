@@ -6,27 +6,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Romas Šinkūnas">
     <meta name="description" content="A personal website template">
-    <title>Home</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
-<body>
-    <nav>
-        <ul style="list-style: none; display: flex; gap: 15px;">
-            <button><a href="index.html">Home</a> </button>
-            <button><a href="about.html">About Me</a></button>
-            <button><a href="resume.html">Resume</a></button>
-            <button><a href="portfolio.html">Portfolio</a></button>
-            <button><a href="paslaugos.html">Paslaugos</a></button>
-        </ul>
-    </nav>
-
-    <section id="index">
-        <div class="container">
-        <h1>Mano Svetainė</h1>
-        <p>Sveiki atvykę į mano svetainę!</p>
-    </section>
+    <body>
+       
+    <aside class="sidebar">
+        <div class="profile">
+            <img src="Images/profile.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Romas Šinkūnas</h1>
+            <p>Antro kurso studentas, Vilniaus Tech universitete</p>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
+                <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                <li><a href="#services"><i class="fas fa-tools"></i> Services</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+        <footer>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </footer>
+    
+    </aside>
+        
+    <div class="sidebar">
+        <div class="profile">
+            <img src="Images/profile.png" alt="Profile Image" class="profile-img">
+            <h1>Romas Šinkūnas</h1>
+            <p>EDIf-23/1</p>
+            <div id="clock">00:00:00</div>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contanct</a></li>
+            </ul>
+        </div>
+    
+        <button id="toggle-theme">🌙</button>
     </div>
-</body>
 
+    <div class="main-content">
+        <section id="home" class="content-section">
+            <h2>Sveiki atvykę į mano svetainę!</h2>
+            <p>bing bong</p>
+        </section>
+
+        <section id="about" class="content-section">
+            <h2>Apie mane</h2>
+            <p>Esu Romas Šinkūnas, antro kurso studentas Vilniaus Tech universitete.</p>
+        </section>
+
+        <section id="resume" class="content-section">
+            <h2>Aprašymas</h2>
+            <h3>Darbo patirtis</h3>
+            <ul>
+                <li><strong>Programuotojas</strong>: 2022-</li>
+            </ul>
+            <h3>Švietimas</h3>
+            <ul>
+                <li><strong>Vilnius Tech</strong>: Dirbtinio intelekto sistemos 2023-2027</li>
+            </ul>
+        </section>
+
+        <section id="portfolio" class="content-section">
+            <h2>Atlikti darbai</h2>
+            <img src="Images/code.png" alt="Portfolio Work">
+        </section>
+
+        <section id="services" class="content-section">
+            <h2>Paslaugos</h2>
+            <video width="320" height="240" controls>
+                <source src="videos/dawg.mp4">
+            </video>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Bu8bH2P37kY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <audio controls>
+                <source src="Audio/linging.mp3">
+            </audio>
+
+            <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+                <mrow>
+                    <mi>f</mi>
+                    <mo stretchy="false">(</mo>
+                    <mi>a</mi>
+                    <mo stretchy="false">)</mo>
+                    <mo>=</mo>
+                    <mfrac>
+                        <mn>1</mn>
+                        <mrow>
+                            <mn>2</mn>
+                            <mi>π</mi>
+                            <mi>i</mi>
+                        </mrow>
+                    </mfrac>
+                    <msubsup>
+                        <mo>∮</mo>
+                        <mi>D</mi>
+                        <mo>f</mo>
+                    </msubsup>
+                    <mfrac>
+                        <mi>f</mi>
+                        <mrow>
+                            <mi>z</mi>
+                            <mo>−</mo>
+                            <mi>a</mi>
+                        </mrow>
+                    </mfrac>
+                    <mo>d</mo>
+                    <mi>z</mi>
+                </mrow>
+            </math>
+            <div class="center">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+                  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red" />
+                </svg>
+              </div>
+        </section>
+        <section id="contact" class="contact-section">
+            <form id="contactForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" required><br>
+        
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" required><br>
+        
+                <label for="email">Email:</label>
+                <input type="email" id="email" required><br>
+        
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" required><br>
+        
+                <label for="address">Address:</label>
+                <input type="text" id="address" required><br>
+        
+                <!-- Questions -->
+                <label>How satisfied are you with our website design?</label>
+                <input type="number" id="question1" min="1" max="10" required><br>
+        
+                <label>How likely are you to recommend us to others?</label>
+                <input type="number" id="question2" min="1" max="10" required><br>
+        
+                <label>How satisfied are you with our customer service?</label>
+                <input type="number" id="question3" min="1" max="10" required><br>
+        
+                <label>How likely are you to return to our site?</label>
+                <input type="number" id="question4" min="1" max="10" required><br>
+        
+                <label>How well does our website meet your needs?</label>
+                <input type="number" id="question5" min="1" max="10" required><br>
+        
+                <button type="button" id="submitBtn">Submit</button>
+            </form>
+            <h2>Submitted Data:</h2>
+            <div id="output"></div>
+        </section>
+    
+        <button id="scroll-to-top">&#8593</button>
+
+        <script src="functions.js"></script>
+    </body>
 </html>
